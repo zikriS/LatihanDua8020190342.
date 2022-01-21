@@ -21,6 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('user/index','UserController@index');
 
-    Route::get('user/tambah','UserController@tambah');
+    Route::get('user/tambah','BukuController@tambah');
     Route::post('user/simpan','UserController@simpan');
+
+    Route::get('user/edit/{id}','BukuController@edit');
+    Route::put('user/update/{id}','UserController@update');
+
+    Route::get('user/hapus/{id}','BukuController@hapus');
 });

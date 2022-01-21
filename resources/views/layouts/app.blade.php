@@ -76,7 +76,15 @@
                 </div>
             </div>
         </nav>
+        @if (\Session::has('pesan'))
 
+        <div class="alert alert-primary">
+        
+        {!! \Session::get('pesan') !!}
+        
+        </div>
+        
+        @endif
         <main class="py-4">
             @yield('content')
         </main>
